@@ -6,7 +6,7 @@ import {
 } from "./shard-interfaces";
 
 const kobisApiBase = axios.create({
-  baseURL: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/",
+  baseURL: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/",
   params: { key: process.env.REACT_APP_KOBIS_API_KEY }
 });
 
