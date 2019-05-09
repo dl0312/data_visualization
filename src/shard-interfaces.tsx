@@ -20,7 +20,7 @@ export interface IWeeklyBoxOfficeListReq {
 
 export interface IBoxOfficeRes {
   rnum: string;
-  rank: string;
+  rank: number;
   rankInten: string;
   rankOldAndNew: string;
   movieCd: string;
@@ -30,13 +30,14 @@ export interface IBoxOfficeRes {
   salesShare: string;
   salesInten: string;
   salesChange: string;
-  salesAcc: string;
+  salesAcc: number;
   audiCnt: string;
   audiInten: string;
   audiChange: string;
-  audiAcc: string;
+  audiAcc: number;
   scrnCnt: string;
   showCnt: string;
+  CurrentDate: string;
 }
 
 export interface IYoutubeSearchApiParams {
