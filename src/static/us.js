@@ -585,7 +585,10 @@ export const audiAccList = boxOfficeList.map(boxOffice => boxOffice.audiAcc);
 export const salesAmtList = boxOfficeList.map(boxOffice => boxOffice.salesAmt);
 
 export const usDailyRankAudiCnt = {
-  date: currentDateList,
-  rank: rankList,
-  audiCnt: audiCntList
+  movieNm: "어스",
+  data: {
+    date: currentDateList,
+    rank: rankList,
+    audiCnt: audiCntList
+  }
 };

@@ -410,7 +410,10 @@ export const audiAccList = boxOfficeList.map(boxOffice => boxOffice.audiAcc);
 export const salesAmtList = boxOfficeList.map(boxOffice => boxOffice.salesAmt);
 
 export const endgameDailyRankAudiCnt = {
-  date: currentDateList,
-  rank: rankList,
-  audiCnt: audiCntList
+  movieNm: "어벤져스: 엔드게임",
+  data: {
+    date: currentDateList,
+    rank: rankList,
+    audiCnt: audiCntList
+  }
 };
