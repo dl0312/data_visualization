@@ -98,7 +98,11 @@ export default class Chart1 extends React.Component<Props, State> {
           show: true
         },
         x: {
-          type: "timeseries"
+          type: "timeseries",
+          localtime: true,
+          tick: {
+            format: "%Y-%m-%d"
+          }
         }
       },
       zoom: {

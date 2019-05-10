@@ -8,6 +8,7 @@ import DateFilter from "./components/DateFilter";
 import { Menu } from "antd";
 import Chart1 from "./components/Chart1";
 import Chart2 from "./components/Chart2";
+import DonutChart from "./components/DonutChart";
 
 const AppContainer = styled.main`
   display: flex;
@@ -133,6 +134,7 @@ export default class App extends React.Component<Props, State> {
             />
           </Filter>
           <ChartTitle>{this.state.movieNm}</ChartTitle>
+          <DonutChart />
           <Chart2 />
           <Chart1 />
           <MyChart id="myChart" />

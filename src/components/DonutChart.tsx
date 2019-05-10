@@ -4,7 +4,6 @@ import chart from "billboard.js";
 import { endgameDailyRankAudiCnt } from "../static/endgame";
 import { usDailyRankAudiCnt } from "../static/us";
 import { moneyDailyRankAudiCnt } from "../static/money";
-import moment from "moment";
 
 // const tick = 4000;
 
@@ -21,7 +20,7 @@ const ChartContainer = styled.div``;
   Chart2: 한 화면에 세 영화의 박스오피스 정보를 보여줍니다.
 
   */
-export default class Chart2 extends React.Component<Props, State> {
+export default class DonutChart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -46,45 +45,30 @@ export default class Chart2 extends React.Component<Props, State> {
       ( object이기 때문에 순서는 상관 없지만 key와 value가 바뀌어서는 안됩니다. )
     
       */
-    let json = {};
-    let xs = {};
-    let names = {};
-    apis.forEach((api: any, idx: number) => {
-      const {
-        data: { rank, date }
-      } = api;
-      json[`rank${idx}`] = rank;
-      json[`date${idx}`] = date;
-      xs[`rank${idx}`] = `date${idx}`;
-      names[`rank${idx}`] = api.movieNm;
-    });
+
     const myChart = chart.generate({
-      bindto: "#chart2",
       data: {
-        xs,
-        json,
-        names
-      },
-      axis: {
-        y: {
-          inverted: true
+        columns: [["data1", 30], ["data2", 120]],
+        type: "donut",
+        onclick: function(d: any, i: number) {
+          console.log("onclick", d, i);
         },
-        x: {
-          type: "timeseries"
+        onover: function(d: any, i: number) {
+          console.log("onover", d, i);
+        },
+        onout: function(d: any, i: number) {
+          console.log("onout", d, i);
         }
       },
-      tooltip: {
-        format: {
-          title: (d: any) => {
-            return moment(d).format("YYYY-MM-DD");
-          }
-        }
-      }
+      donut: {
+        title: "Iris Petal Width"
+      },
+      bindto: "#donutChart"
     });
     this.setState({ myChart });
   };
 
   render() {
-    return <ChartContainer id="chart2" />;
+    return <ChartContainer id="donutChart" />;
   }
 }
