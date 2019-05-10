@@ -28,7 +28,7 @@ const radioStyle = {
 
 interface Props {
   changeDateRange: (dateRange: "daily" | "weekly") => void;
-  changeTargetDate: (date: any, dateString: string) => void;
+  // changeTargetDate: (date: any, dateString: string) => void;
   changeRangePicker: (date: any, dateString: any) => void;
   fromDt: string;
   toDt: string;
@@ -46,8 +46,8 @@ export default class DateFilter extends React.Component<Props, State> {
   };
 
   render() {
-    const dateFormat = "YYYYMMDD";
-    const displayFormat = "YYYY/MM/DD";
+    const dateFormat = "YYYY-MM-DD";
+    const displayFormat = "YYYY-MM-DD";
     const { changeDateRange, changeRangePicker, fromDt, toDt } = this.props;
     return (
       <DateFilterContainer>
